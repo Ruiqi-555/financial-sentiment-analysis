@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/
+*.csv
+*.xlsx
+*.json
+*.parquet
+
+# Models and outputs
+models/
+outputs/
+results/
+checkpoints/
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Environment
+.env
+.venv/
+venv/
+
+# System
+.DS_Store

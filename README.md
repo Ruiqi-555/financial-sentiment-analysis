@@ -1,47 +1,115 @@
-Financial Sentiment Analysis
+# Financial Sentiment Analysis
 
-This is a course project on financial sentiment classification.
-The project compares traditional machine learning methods and Transformer-based models on financial text data.
+A course project comparing traditional machine learning methods and Transformer-based models for financial sentiment classification.
 
-Task
-
-The goal is to classify financial sentences into three sentiment categories:
+The task is to classify financial text into three sentiment categories:
 
 * Positive
 * Neutral
 * Negative
 
-Methods
+## Project Overview
 
-The project includes two main groups of models:
+This project builds a text classification pipeline for financial sentiment analysis. It includes data preprocessing, exploratory analysis, traditional machine learning baselines, Transformer-based models, model comparison, error analysis, robustness testing, and out-of-distribution evaluation.
 
-Traditional machine learning
+The repository is a cleaned version of an academic project. Raw data files, trained model weights, and generated outputs are not included.
 
-* TF-IDF
+## Methods
+
+### Traditional Machine Learning
+
+* TF-IDF feature extraction
 * Logistic Regression
 * Linear SVM
-* Naive Bayes
+* Multinomial Naive Bayes
+* SMOTE for class imbalance handling
 
-Transformer-based models
+### Transformer-based Models
 
 * FinBERT
-* BERT-based models
-* RoBERTa / DistilBERT variants
+* BERT-base
+* DistilBERT / RoBERTa variants
+* Zero-shot classification with BART-large-MNLI
+* Optional LoRA / quantization experiments
 
-Evaluation
+### Evaluation
 
-Models are compared using metrics such as:
+The project compares models using:
 
 * Accuracy
 * Macro-F1
 * Class-level performance
+* Training time
+* Inference latency
 * Robustness under noisy text input
+* Out-of-distribution behaviour on financial news
 
-Notes
+## Project Structure
 
-This repository is a cleaned version of a course project.
-Raw data files are not included if they are large or subject to usage restrictions.
+```text
+financial-sentiment-analysis/
+├── README.md
+├── requirements.txt
+├── config.py
+├── main.py
+├── preprocessing.py
+├── eda_analysis.py
+├── ml_pipeline.py
+├── transformer_pipeline.py
+├── additional_models.py
+├── lora_pipeline.py
+├── zero_shot.py
+├── ensemble.py
+├── error_analysis.py
+├── ood_evaluation.py
+├── robustness.py
+└── evaluation.py
+```
 
-Tools
+## How to Run
 
-Python · Scikit-learn · Hugging Face Transformers · Pandas · Jupyter Notebook
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the full pipeline:
+
+```bash
+python main.py
+```
+
+To use a local dataset, configure the data path through an environment variable:
+
+```bash
+export STAT8307_DATA=/path/to/data.csv
+```
+
+The expected input file should contain financial text and sentiment labels.
+
+## Notes on Data and API Keys
+
+Raw data, trained model files, and generated result files are not included in this repository.
+
+The OOD evaluation module can optionally use NewsAPI. The API key should be configured locally through an environment variable:
+
+```bash
+export NEWSAPI_KEY=your_api_key_here
+```
+
+No API keys or private data are included in this repository.
+
+## Dependencies
+
+Main libraries used in this project include:
+
+* pandas, numpy
+* scikit-learn, imbalanced-learn
+* torch, transformers
+* peft, bitsandbytes
+* nltk
+* matplotlib, seaborn, wordcloud
+* umap-learn
+* statsmodels
+* newsapi-python

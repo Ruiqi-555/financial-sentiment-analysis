@@ -14,6 +14,13 @@ This project builds a text classification pipeline for financial sentiment analy
 
 The repository is a cleaned version of an academic project. Raw data files, trained model weights, and generated outputs are not included.
 
+## Project Context
+
+This repository is based on a course project completed as part of a team.  
+The uploaded version is a cleaned and reorganized version for portfolio reference.
+
+My main contributions included model comparison, evaluation analysis, result interpretation, and project documentation. Some modules were developed collaboratively.
+
 ## Methods
 
 ### Traditional Machine Learning
